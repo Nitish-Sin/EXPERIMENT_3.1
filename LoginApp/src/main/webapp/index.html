@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servlet Login</title>
+<style>
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Helvetica, Arial, sans-serif;
+	display: grid;
+	place-items: center;
+	min-height: 90vh;
+	/* New background color */
+	background-color: #f0f4f8;
+}
+
+form {
+	/* New background color */
+	background: #ffffff;
+	border: 1px solid #dde;
+	padding: 2rem;
+	border-radius: 12px;
+	/* Updated box-shadow */
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+	width: 320px;
+}
+
+h2 {
+	text-align: center;
+	margin-top: 0;
+	/* Darker text color */
+	color: #2c3e50;
+}
+
+div {
+	margin-bottom: 1rem;
+}
+
+label {
+	display: block;
+	margin-bottom: 0.5rem;
+	font-weight: 600;
+	/* Updated label color */
+	color: #34495e;
+}
+
+input[type="text"], input[type="password"] {
+	width: 100%;
+	padding: 0.75rem;
+	box-sizing: border-box; /* Ensures padding doesn't affect width */
+	/* Updated border color */
+	border: 1px solid #bdc3c7;
+	border-radius: 8px;
+	font-size: 1rem;
+	/* Added transition for focus */
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+/* Added focus style */
+input[type="text"]:focus, input[type="password"]:focus {
+	outline: none;
+	border-color: #3498db;
+	box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+button {
+	width: 100%;
+	padding: 0.85rem;
+	/* New button color */
+	background-color: #3498db;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	/* Updated transition */
+	transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+	/* New hover color */
+	background-color: #2980b9;
+}
+/* Added active state for button */
+button:active {
+	transform: scale(0.98);
+}
+</style>
+</head>
+<body>
+
+	<!-- 
+      Step 1: Create an HTML form.
+      - 'method="POST"' sends the data in the request body.
+      - 'action="login"' is the URL pattern that will be mapped 
+        to our servlet in web.xml.
+    -->
+	<form action="login" method="POST">
+		<h2>Servlet Login</h2>
+		<div>
+			<label for="username">Username:</label> <input type="text"
+				id="username" name="username" required>
+		</div>
+		<div>
+			<label for="password">Password:</label> <input type="password"
+				id="password" name="password" required>
+		</div>
+		<button type="submit">Login</button>
+	</form>
+
+</body>
+</html>
